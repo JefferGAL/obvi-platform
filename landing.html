@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obvi AI™ (BETA) - Trademark Intelligence Platform</title>
+    <link rel="icon" type="image/png" href="/static/logo.png">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/components.css">
+    <link rel="stylesheet" href="/static/css/landing.css"> 
+    <style>
+        body {
+            /* --- START OF FIX --- */
+            display: flex;
+            flex-direction: column; /* Force a top-to-bottom layout */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            padding: 40px 20px; /* Add padding to the body */
+            /* --- END OF FIX --- */
+        }
+        .landing-container {
+            text-align: center;
+            max-width: 900px; 
+            width: 90%;      
+            /* Removed padding, as it's on the body now */
+        }
+        .landing-logo img {
+            height: 60px; 
+            margin-bottom: 20px;
+        }
+        .landing-title {
+            font-size: 2.2em;
+            color: var(--logo-blue); 
+            margin-bottom: 15px;
+        }
+        .landing-subtitle {
+            font-size: 1.1em;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+        /* Footer styling (now uses brand-analogy from base.css) */
+        footer {
+            width: 100%;
+            max-width: 900px; /* Match container width */
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <div class="landing-logo">
+            <img src="/static/logo.png" alt="Obvi AI Logo">
+        </div>
+        <h1 class="landing-title">Trademark Intelligence Platform</h1>
+        <p class="landing-subtitle">Choose your starting point to begin defragmenting IP intelligence.</p>
+
+        <div class="action-grid">
+            <div class="action-card" id="knockout-search-btn">
+                <h3>Knockout Search</h3>
+                <p>Perform a quick, direct-hit search for identical and phonetically similar marks.</p>
+            </div>
+            <div class="action-card" id="clearance-search-btn">
+                <h3>Clearance Search</h3>
+                <p>Conduct a comprehensive search with broad variations for a full risk assessment.</p>
+            </div>
+             <div class="action-card disabled">
+                <h3>Knockout Visual Search</h3>
+                <p>Analyze a logo for direct visual conflicts (coming soon).</p>
+            </div>
+            <div class="action-card disabled">
+                <h3>Clearance Visual Search</h3>
+                <p>Conduct a broad visual search for similar design elements (coming soon).</p>
+            </div>
+            <div class="action-card" id="cease-desist-btn">
+                <h3>I Got a C&D Letter</h3>
+                <p>Analyze a cease and desist letter to understand its claims and your options (coming soon).</p>
+            </div>
+            <div class="action-card" id="learn-more-btn">
+                <h3>Learn About Trademarks</h3>
+                <p>Explore resources and guides to better understand trademark law (coming soon).</p>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="/static/js/landing.js"></script>
+
+    <footer class="brand-analogy">
+            <p><strong>GPS with Real-Time Traffic vs. Paper Map with Highlighter:</strong> You still decide where you're going and which routes make sense, but you're not guessing about road closures or construction you can't see from here.</p>
+    </footer>
+</body>
+</html>

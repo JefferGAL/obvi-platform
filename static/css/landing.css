@@ -1,0 +1,67 @@
+/* static/css/landing.css - Styles for action cards */
+.action-grid-container {
+    margin-bottom: 30px; /* Space between cards and main layout */
+}
+
+.action-grid {
+    display: grid;
+    /* Adjust columns for better fit - 3 or 6 columns */
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 20px;
+}
+
+.action-card {
+    background: white;
+    padding: 20px; /* Slightly reduced padding */
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: left;
+    border: 1px solid var(--border-color); /* Subtle border */
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+}
+
+.action-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.action-card h3 {
+    color: var(--logo-blue); /* Use logo blue */
+    margin-bottom: 8px;
+    font-size: 1.1em; /* Slightly smaller title */
+}
+
+.action-card p {
+    font-size: 0.85em; /* Slightly smaller text */
+    color: var(--text-light);
+    flex-grow: 1; /* Allow description to push button down */
+    line-height: 1.5;
+}
+
+.action-card.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #f8f9fa;
+    border-color: #e9ecef;
+}
+
+.action-card.disabled:hover {
+    transform: none;
+    box-shadow: var(--shadow-medium);
+}
+
+/* Adjust grid for smaller screens if needed */
+@media (max-width: 900px) {
+    .action-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .action-grid {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+}

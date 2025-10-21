@@ -1,0 +1,111 @@
+/* questionnaire.css - Questionnaire modal styles */
+.questionnaire-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.questionnaire-content {
+    background: white;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.questionnaire-header {
+    background: linear-gradient(135deg, var(--primary-blue), var(--cosmic-purple));
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.questionnaire-header h3 {
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.questionnaire-body {
+    padding: 30px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.question-container {
+    margin-bottom: 20px;
+}
+
+.question {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.question.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.question h4 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.question .sub-question {
+    margin: 15px 0;
+}
+
+.question textarea, .question input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+
+.questionnaire-navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--bg-light);
+}

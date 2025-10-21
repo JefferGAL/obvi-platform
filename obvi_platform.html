@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obvi AI™ (BETA) Defragment Trademark Intelligence</title>
+    <link rel="icon" type="image/png" href="/static/logo.png">
+
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/components.css">
+    <link rel="stylesheet" href="/static/css/nice-classes.css">
+    <link rel="stylesheet" href="/static/css/search.css">
+    <link rel="stylesheet" href="/static/css/results.css">
+    <link rel="stylesheet" href="/static/css/questionnaire.css">
+    <link rel="stylesheet" href="/static/css/landing.css"> <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="loginPanel" class="login-container">
+        <div class="panel">
+            <div class="logo">
+                <img src="/static/logo.png" alt="Obvi AI Logo">
+                <span>Obvi AI<sup class="trademark-symbol">TM</sup> Search</span>
+            </div>
+            <h3 class="panel-title">Sign In to Reclaim Your Analysis Time</h3>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername" class="form-label">Username</label>
+                    <input type="text" id="loginUsername" name="username" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword" class="form-label">Password</label>
+                    <input type="password" id="loginPassword" name="password" class="form-input" required>
+                </div>
+                <button type="submit" id="loginButton" class="btn btn-primary btn-full">
+                    <span id="loginButtonText">Sign In</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="mainApp" class="container hidden">
+        <header class="header">
+            <a href="/" class="logo">
+                <img src="/static/logo.png" alt="Obvi AI Logo"> <span>Obvi AI™ (BETA) Defragmenting IP Intelligence</span>
+            </a>
+            <div id="userDisplay" class="hidden">
+                <span>Welcome, <strong id="username"></strong></span>
+                <button id="logoutButton" class="btn btn-secondary">Logout</button>
+            </div>
+        </header>
+
+        <div class="action-grid-container">
+             <div class="action-grid">
+                <div class="action-card" id="knockout-search-context-btn">
+                    <h3>Knockout Search</h3>
+                    <p>Perform a quick, direct-hit search.</p>
+                </div>
+                <div class="action-card" id="clearance-search-context-btn">
+                    <h3>Clearance Search</h3>
+                    <p>Conduct a comprehensive search.</p>
+                </div>
+                 <div class="action-card disabled">
+                    <h3>Visual Search</h3>
+                    <p>Analyze a logo (coming soon).</p>
+                </div>
+                <div class="action-card" id="cease-desist-context-btn">
+                    <h3>I Got a C&D Letter</h3>
+                    <p>Analyze a letter (coming soon).</p>
+                </div>
+                <div class="action-card" id="learn-more-context-btn">
+                    <h3>Learn About Trademarks</h3>
+                    <p>Explore resources (coming soon).</p>
+                </div>
+                <div class="action-card" id="metrics-context-btn">
+                    <h3>Metrics/Analytics</h3>
+                    <p>View USPTO filing trends.</p>
+                </div>
+            </div>
+        </div>
+
+        <main class="main-layout">
+            <div class="search-column">
+                <div class="search-section panel">
+                    <form id="searchForm" class="search-form">
+                        <div class="form-group">
+                            <label for="trademark" class="form-label">Trademark Name *</label>
+                            <input type="text" id="trademark" name="trademark" required
+                                   placeholder="Enter the mark you need to search..." autocomplete="off" class="form-input">
+                        </div>
+
+                        <div id="enhancedModeOptions" class="enhanced-options-container hidden">
+                            <div class="form-group">
+                                <label class="checkbox-label" for="useVariationsToggle">
+                                    <input type="checkbox" id="useVariationsToggle" checked>
+                                    Automatically Generate Search Variations
+                                </label>
+                                <div class="info-container">
+                                    <span class="info-trigger">[What's this?]</span>
+                                    <div class="info-popup">
+                                        Uncheck for precise searching. Use pipe "|" to separate exact terms.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="checkbox-label" for="slangSearchToggle">
+                                    <input type="checkbox" id="slangSearchToggle">
+                                    Include Slang & Conceptual Variations
+                                </label>
+                                <div class="info-container">
+                                    <span class="info-trigger">[What's this?]</span>
+                                    <div class="info-popup">
+                                        Our Platform uses an LLM to identify slang and Variations Engine to generate conceptual variations of the slang to defragment hidden conflicts.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="search-mode-section">
+                            <label class="form-label">Search Mode</label>
+                            <div class="search-mode-slider-container">
+                                <div class="search-mode-labels">
+                                    <div class="mode-description basic active" id="modeDescBasic">
+                                        <strong>BASIC SEARCH</strong>
+                                        <p>Fast direct matching for known conflicts. Phonetic and exact string analysis.</p>
+                                    </div>
+                                    <div class="mode-description enhanced" id="modeDescEnhanced">
+                                        <strong>ENHANCED SEARCH</strong>
+                                        <p>Comprehensive multi-weight analysis: visual, phonetic & conceptual similarity with adjustable control and search variations.</p>
+                                    </div>
+                                </div>
+                                <input type="range" id="searchModeSlider" min="0" max="1" value="0" step="1">
+                            </div>
+                        </div>
+
+                        <div class="nice-classes-section">
+                            <label class="form-label">NICE Classification
+                                <div class="info-container">
+                                    <span class="info-trigger">[What's this?]</span>
+                                    <div class="info-popup">
+                                        Nice Classification the Nice Classification System internationally categorizes goods (Classes 1-34) and services (Classes 35-45) for trademark application -- see <a href="https://www.uspto.gov/trademarks/trademark-updates-and-announcements/nice-agreement-current-edition-version-general-remarks" target="_blank">USPTO</a>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <div class="coordination-info-box">
+                                <strong>Automatic Coordination:</strong> Classes 9 & 42 always search together.
+                            </div>
+                            <div class="class-controls">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="all-classes-toggle" checked>
+                                    Search All Classes
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="coordinationToggle" checked>
+                                    Enable Optional Coordination
+                                </label>
+                            </div>
+                            <div id="niceClassesGrid" class="nice-classes-grid-compact disabled"></div>
+                        </div>
+
+                        <div class="advanced-options">
+                            <label class="form-label">Similarity Thresholds</label>
+                            <div class="threshold-group">
+                                <label for="phoneticThreshold">Phonetic: <span id="phoneticValue">70%</span></label>
+                                <input type="range" id="phoneticThreshold" class="range-input" min="0" max="100" value="70">
+                            </div>
+                            <div class="threshold-group">
+                                <label for="visualThreshold">Visual: <span id="visualValue">70%</span></label>
+                                <input type="range" id="visualThreshold" class="range-input" min="0" max="100" value="70">
+                            </div>
+                            <div class="threshold-group">
+                                <label for="conceptualThreshold">Conceptual: <span id="conceptualValue">60%</span></label>
+                                <input type="range" id="conceptualThreshold" class="range-input" min="0" max="100" value="60">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="maxResults">Max Results</label>
+                                <select id="maxResults" class="form-select">
+                                    <option value="100">100 results</option>
+                                    <option value="250">250 results</option>
+                                    <option value="500">500 results</option>
+                                    <option value="999999">All results</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-actions">
+                            <button type="submit" id="searchButton" class="btn btn-primary">
+                                <span id="searchButtonText">Search Trademarks</span>
+                            </button>
+                            <button type="button" class="btn btn-secondary" id="startQuestionnaireBtn">
+                                AI Context Interview
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="results-column">
+                <div class="results-section panel">
+                    <div class="results-tabs">
+                        <button class="tab-button active" data-tab="searchResultsPanel">Search Results</button>
+                        <button class="tab-button" data-tab="commonLawPanel" id="commonLawTabButton" style="display: none;">Common Law</button>
+                        <button class="tab-button" data-tab="metricsPanel">Metrics</button>
+                    </div>
+
+                    <div id="searchResultsPanel" class="tab-panel active">
+                        <div id="resultsContent">
+                             <div class="empty-state">
+                                <h4>Ready to Unify Trademark Chaos?</h4>
+                                <p>Enter a mark, select classes, click search, and reclaim your analysis time.</p>
+                            </div>
+                        </div>
+                         </div>
+
+                    <div id="commonLawPanel" class="tab-panel hidden">
+                        <div id="commonLawResultsContainer">
+                            <p>Select marks from the 'Search Results' tab and click 'Investigate Selected' to perform a common law analysis.</p>
+                        </div>
+                    </div>
+
+                    <div id="metricsPanel" class="tab-panel hidden">
+                        <h4>Result Set Metrics</h4>
+                        <div id="metricsContainer">
+                            <p>Metrics will appear here after a search is performed.</p>
+                    </div>
+                        <div id="globalMetricsContainer" class="hidden">
+                            </div>
+                    </div>
+
+                    <div id="downloadSection" class="download-section hidden">
+                        <h4>Export Your Intelligence</h4>
+                        <div class="download-buttons">
+                            <button class="download-btn" id="downloadCsvBtn">CSV</button>
+                            <button class="download-btn" id="downloadTxtBtn">TXT</button>
+                            <button class="download-btn" id="downloadVariationsBtn">Variations</button>
+                            <button class="download-btn" id="downloadReportMdBtn">Markdown</button>
+                            <button class="download-btn" id="downloadReportDocxBtn">Word (DOCX)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+
+    </div>
+
+    <div id="questionnaireModal" class="questionnaire-modal hidden">
+        <div class="questionnaire-content">
+            <div class="questionnaire-header">
+                <h3>AI Business Context Questionnaire</h3>
+                <button class="close-btn modal-close">×</button> </div>
+            <form id="questionnaireForm">
+                <div class="questionnaire-body">
+                    <div class="question-container" id="questionContainer"></div>
+                </div>
+                 <div class="questionnaire-navigation">
+                    <button type="button" class="btn btn-secondary hidden" id="prevBtn">Previous</button>
+                    <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+                    <button type="button" class="btn btn-primary hidden" id="analyzeBtn">Analyze & Auto-Fill</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="/static/js/app-controller.js"></script>
+</body>
+</html>

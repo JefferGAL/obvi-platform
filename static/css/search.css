@@ -1,0 +1,186 @@
+/* search.css - Styles for the main search form and its new components */
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+/* --- Search Mode Slider Styles --- */
+.search-mode-section {
+    margin-top: 15px;
+}
+
+.search-mode-slider-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: var(--primary-blue);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: var(--shadow-medium);
+    transition: background 0.2s ease;
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: var(--primary-blue);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: var(--shadow-medium);
+    transition: background 0.2s ease;
+}
+
+.search-mode-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.mode-description {
+    width: 48%;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.mode-description strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.mode-description.active {
+    background-color: #e9f2ff;
+    border-color: var(--primary-blue);
+}
+
+.mode-description.enhanced.active {
+    background-color: #e3d8ff;
+    border-color: var(--cosmic-purple);
+}
+
+.mode-description.enhanced.active strong {
+    color: var(--cosmic-purple);
+}
+
+
+/* --- NICE Classes Section Styles --- */
+.all-classes-control {
+    margin: 15px 0;
+}
+
+.nice-classes-grid-compact.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* NEW: Coordination Info Box */
+.coordination-info-box {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 12px 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #856404;
+}
+
+/* NEW: Info Bubble (for clickable pop-up) */
+.info-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.info-trigger {
+    cursor: pointer;
+    color: var(--primary-blue);
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: underline dotted;
+}
+
+.info-popup {
+    visibility: hidden;
+    opacity: 0;
+    width: 300px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 12px;
+    line-height: 1.5;
+    position: absolute;
+    z-index: 10;
+    bottom: 130%; 
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.info-popup.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.info-popup a {
+    color: #89cff0;
+    text-decoration: underline;
+}
+
+/*added 09292025 to add info boxes for slang and variation/no checkboxes*/
+.info-container:hover .info-popup {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ANNOTATION: This new rule block styles the container for the relocated checkboxes. */
+.enhanced-options-container .form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px; /* Adds space between the label and the info trigger */
+    margin-bottom: 10px; /* Reduces vertical space between the two checkbox rows */
+}
+
+/* ANNOTATION: This prevents the label from taking up the full width and misaligning the trigger. */
+.enhanced-options-container .checkbox-label {
+    margin-bottom: 0;
+    flex-shrink: 0; /* Prevents the label from shrinking */
+}

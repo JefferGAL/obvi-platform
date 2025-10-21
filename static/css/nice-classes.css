@@ -1,0 +1,125 @@
+/* nice-classes.css - Compact NICE class button styling */
+
+.nice-classes-grid-compact {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 8px;
+    margin: 20px 0;
+    max-width: 600px;
+}
+
+.nice-class-button-compact {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: white;
+    color: #495057;
+    user-select: none;
+    overflow: visible;
+}
+
+.nice-class-button-compact:hover {
+    border-color: #007bff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.15);
+}
+
+.nice-class-button-compact.selected {
+    background: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+.nice-class-button-compact.coordinated {
+    background: #e3f2fd;
+    border-color: #2196f3;
+    color: #1976d2;
+}
+
+/* NEW: Style for when "All NICE Classes" is checked */
+.nice-class-button-compact.select-all-active {
+    background: #e3f2fd; /* The light blue color */
+    border-color: #2196f3;
+    color: #1976d2;
+    opacity: 0.7; /* Dim the buttons */
+    cursor: default; /* Indicate they are not individually clickable */
+}
+
+.nice-class-button-compact.forced-coordinated {
+    background: #fff3e0;
+    border-color: #ff9800;
+    color: #f57c00;
+}
+
+.nice-class-button-compact.goods {
+    border-left: 4px solid #28a745;
+}
+
+.nice-class-button-compact.services {
+    border-left: 4px solid #dc3545;
+}
+
+.coordinated-indicator-compact, .forced-coordination-indicator {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 18px;
+    height: 18px;
+    background: #2196f3;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.forced-coordination-indicator {
+    background: #ff9800;
+}
+
+.tooltip-compact {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 1.4;
+    white-space: nowrap;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    max-width: 300px;
+    white-space: normal;
+    text-align: center;
+}
+
+.nice-class-button-compact:hover .tooltip-compact {
+    opacity: 1;
+}
+
+.tooltip-compact::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #333;
+}
