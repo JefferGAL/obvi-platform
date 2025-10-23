@@ -1,5 +1,5 @@
 # obvi-platform
-# Obvi AI™ (BETA) - Trademark Intelligence Platform 🛡️🔍
+# Obvi AI™ (BETA) - Trademark Intelligence Platform 
 
 Welcome to **Obvi AI**, the comprehensive platform designed to streamline and supercharge your trademark search and viability analysis process. Built on a robust, security-first architecture, Obvi AI combines advanced search algorithms, intelligent variation generation, local AI analysis, and professional reporting to empower legal professionals and brand owners.
 
@@ -7,7 +7,7 @@ Our goal is to **defragment IP intelligence**, providing the speed of technology
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 * **Advanced Search Capabilities:**
     * **Knockout/Basic Search:** High-speed exact and phonetic matching for quick, direct-hit conflict identification.
@@ -22,33 +22,33 @@ Our goal is to **defragment IP intelligence**, providing the speed of technology
     * Includes all 45 NICE classes with descriptions.
     * Implements **forced 9↔42 coordination** (Tech Hardware & Software/Services) automatically.
     * Supports **optional coordination** based on USPTO relations.
-* **AI-Powered Analysis (Local & Private):** 🧠
+* **AI-Powered Analysis (Local & Private):** 
     * Integrates with local **Ollama** instances, keeping your search data private.
     * **Questionnaire Processing:** Analyzes user input about business context to recommend optimal NICE classes and search strategies.
     * **Conflict Assessment:** Provides AI-driven summaries and risk stratification for potential conflicts.
     * **Common Law Context:** Analyzes web content from potential common law conflicts in the context of *your* business.
-* **Owner-Centric Common Law Investigation:** 🕵️‍♀️
+* **Owner-Centric Common Law Investigation:** 
     * Performs targeted web, social media, and business directory searches based on owners identified in the initial USPTO search.
     * Uses AI to verify company identity and summarize web content.
     * Corroborates findings across multiple sources.
-* **Performance & Data Integrity:** 🚀
+* **Performance & Data Integrity:** 
     * Utilizes a **read-only connection** to the primary USPTO trademark database, ensuring data integrity.
     * Employs optimized, multi-step database queries (serial lookup -> enrichment) and class-first filtering.
     * **Real-time progress tracking** via WebSockets (in `enhanced_performance_system.py`).
-* **Security-First Architecture:** 🔒
+* **Security-First Architecture:** 
     * **Separate Authentication Database:** Isolates user credentials, sessions, and audit logs from the core trademark data (`separate_auth_db.py`).
     * **Secure Session Management:** Uses `HttpOnly`, `Secure`, `SameSite` cookies instead of `localStorage`.
     * **Role-Based Access Control (RBAC):** Predefined roles (Admin, Analyst, Viewer) with distinct permissions.
     * **Comprehensive Audit Logging:** Tracks authentication events, searches, data access, and security incidents.
     * **Password Security:** Hashing with salt, failed attempt tracking, and account lockout.
-* **Professional Reporting & Exports:** 📊📄
+* **Professional Reporting & Exports:** 
     * Multiple download formats: **CSV, JSON, TXT, Variations List**.
     * **Advanced Reports:** Generates comprehensive analysis reports in **Markdown (.md)** and **Word (.docx)** (requires Pandoc).
     * Includes multi-perspective analysis and appropriate legal disclaimers.
 
 ---
 
-## 🏛️ Architectural Overview
+## Architectural Overview
 
 Obvi AI is built on several key principles:
 
@@ -60,7 +60,7 @@ Obvi AI is built on several key principles:
 
 ---
 
-## ⚙️ Technology Stack
+## Technology Stack
 
 * **Backend:** Python, FastAPI
 * **Database:** PostgreSQL (accessed via `asyncpg`)
@@ -74,10 +74,10 @@ Obvi AI is built on several key principles:
 
 ---
 
-## 📁 File Structure
+## File Structure
 LATERS
 
-## 🚀 Getting Started
+## Getting Started
 
 1.  **Prerequisites:**
     * Python 3.8+
@@ -103,7 +103,7 @@ LATERS
 
 ---
 
-## 💻 Usage
+## Usage
 
 1.  Navigate to `http://localhost:8000`.
 2.  Choose a search context (Knockout or Clearance) from the landing page, which redirects you to the main search UI (`/search`).
@@ -121,7 +121,7 @@ LATERS
 
 ---
 
-## 🛡️ Security Considerations
+## Security Considerations
 
 * **Data Isolation:** User credentials and sessions are stored in a database completely separate from the main trademark data.
 * **Read-Only Access:** The primary database connection should be configured as read-only to prevent accidental modification of USPTO data.
@@ -133,12 +133,12 @@ LATERS
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-(Placeholder - Add contribution guidelines if this is an open project).
+Me Phi ME.
 
 ---
 
-## 📜 License
+## License
 
 LATERS
